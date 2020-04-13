@@ -1,0 +1,18 @@
+{% extends 'l_logs/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>{{ topic }}</h2>
+{% endblock header %}
+
+{% block content %}
+    
+    <form method = "POST" class="form"> {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a class="btn btn-danger" href="{% url 'delete_entry' entry.id %}">Delete</a>        
+        {% endbuttons %}
+    </form>
+{% endblock %}

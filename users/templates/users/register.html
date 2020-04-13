@@ -1,0 +1,16 @@
+{% extends 'l_logs/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block header %}
+    <h2>Register for your account</h2>
+{% endblock %}
+
+{% block content %}
+    <form method = "POST" class="form">{% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button name="submit" type="submit" class="btn btn-primary">Log in</button>
+        {% endbuttons %}
+    </form>
+{% endblock %}
